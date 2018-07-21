@@ -1,0 +1,25 @@
+/**
+*classe para colocar o conteúdo no centro
+*/
+.conteiner{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+/**
+*classe para redimensionar image do logo starWars
+*/
+.starLogo{
+  margin-top: 5%;
+  width: 30%;
+  height: 30%;
+}
+/**
+*Classe para configurar a margem dos botões
+*/
+div a{
+  margin-right: 5px;
+}
+
+
