@@ -1,0 +1,41 @@
+<div style="background-color: aliceblue">
+  <mat-dialog-content>
+    <form [formGroup]='form'>
+      <div class="col s12 l6">
+        <!-- <input type="text" formControlName='specie' disabled="disabled" id="name" class="validate"> -->
+        <label for="name">Especie:</label>
+        <label >{{form.get('specie').value}}</label>
+      </div>
+      <div class="col s12 l6">
+        <!-- <input type="text" formControlName='height' disabled="disabled" id="name" class="validate"> -->
+        <label for="name">Altura: </label>
+        <label class="form-control" >{{form.get('height').value}} <span>cm</span></label>
+      </div>
+      <div class="col s12 l6">
+        <label for="name">Cor de Cabelo:</label>
+        <label class="form-control" >{{form.get('hair').value}}</label>
+      </div>
+      <div class=" col s12 l6">
+          <label for="name">Genero:</label>
+          <label class="form-control" >{{form.get('gender').value}}</label>
+        </div>
+        <div>
+          <label >Veiculos: </label>
+            <div *ngFor='let vehicle of vehicles'>
+              <Label>{{vehicle}}</Label>
+            </div>
+        </div>
+
+
+    </form>
+
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-button matDialogClose>
+      <i class="material-icons">close</i>
+    </button>
+
+  </mat-dialog-actions>
+</div>

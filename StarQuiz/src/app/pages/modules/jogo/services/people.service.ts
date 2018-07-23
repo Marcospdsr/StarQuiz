@@ -20,4 +20,10 @@ export class PeopleService {
     .get(this.url + '?page=' + count)
     .map((res: Response) => res.json());
   }
+
+  get(urlType: string): any {
+    return this.http
+    .get(urlType)
+    .map((res: Response) => res.json());
+  }
 }
