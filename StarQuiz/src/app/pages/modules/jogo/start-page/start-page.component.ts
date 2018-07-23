@@ -13,6 +13,7 @@ export class StartPageComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
+    localStorage.setItem('pontuacao', '0');
     if (localStorage.getItem('pontuacao') !== '0') {
       const dialogRef = this.dialog.open(ModalFimComponent, {
         width: 'auto',
