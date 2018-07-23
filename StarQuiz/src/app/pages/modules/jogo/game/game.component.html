@@ -1,0 +1,68 @@
+<div class="conteiner">
+  <div class="row" style="display: flex; flex-direction: row">
+    <img src="https://image.flaticon.com/icons/png/512/280/280943.png" style="width: 10%; height: 10%;" alt="darthLogo" class="responsive-img"
+    />
+    <h1 class="white-text text-white">StarQuiz!</h1>
+  </div>
+
+  <h1 class="white-text text-white" >
+      {{(minutesDisplay) && (minutesDisplay <= 59) ? minutesDisplay : '00'}} : {{(secondsDisplay) && (secondsDisplay <= 59) ? secondsDisplay : '00'}} <br/>
+  </h1>
+  <div class="row">
+    <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="pageEvent = $event">
+    </mat-paginator>
+  </div>
+
+  <div *ngIf="pageEvent" class="row">
+    <div class="container flex">
+      <div *ngFor='let person of people; let i = index'>
+        <div class="col ">
+          <div class="card blue-grey darken-1 ">
+            <div class="card-content white-text">
+              <div class="row">
+                <p>
+                  <img style='width: 200px; height: 250px;' src={{person.imgSrc}} alt=""> </p>
+              </div>
+              <div *ngIf="person.success == false; else elseContent1" class="row">
+                <a (click)='resp(i)' class="waves-effect waves-light btn">Responder</a>
+                <a (click)='help(i)' class="waves-effect waves-light btn">Dica</a>
+              </div>
+              <ng-template #elseContent1>
+                <label class="alert"> Correto</label>
+              </ng-template>
+            </div>
+            {{pageEvent.pageIndex}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="container flex">
+        <div *ngFor='let person of people2 ; let i = index'>
+          <div class="col ">
+            <div class="card blue-grey darken-1 ">
+              <div class="card-content white-text">
+                <div class="row">
+                  <p>
+                    <img style='width: 200px; height: 250px;' src={{person.imgSrc}} alt=""> </p>
+                </div>
+
+                <div *ngIf="person.success == false; else elseContent" class="row">
+                  <a (click)='resp(i)' class="waves-effect waves-light btn">Responder</a>
+                  <a (click)='help(i)' class="waves-effect waves-light btn">Dica</a>
+                </div>
+                <ng-template #elseContent>
+                  <label class="alert"> Correto</label>
+                </ng-template>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>

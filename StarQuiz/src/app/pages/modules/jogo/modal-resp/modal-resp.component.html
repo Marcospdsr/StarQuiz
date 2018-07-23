@@ -1,0 +1,19 @@
+<div style="background-color: aliceblue">
+    <mat-dialog-content>
+        <form [formGroup]='form'>
+            <div class="input-field col s12 l6">
+                <input type="text" formControlName='name'  id="name" class="validate">
+                <label for="name">Nome:</label>
+              </div>
+        </form>
+
+
+      </mat-dialog-content>
+
+      <mat-dialog-actions>
+          <button mat-button matDialogClose><i class="material-icons">close</i></button>
+          <button mat-button (click)='verifResp()'>Responder</button>
+
+      </mat-dialog-actions>
+</div>
+

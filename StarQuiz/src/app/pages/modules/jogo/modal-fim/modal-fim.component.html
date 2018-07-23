@@ -1,0 +1,27 @@
+<div style="background-color: aliceblue">
+    <h1 matDialogTitle>{{pontuacao}}</h1>
+    <mat-dialog-content>
+        <form [formGroup]='form'>
+            <div class="input-field col s12 l6">
+                <input type="text" formControlName='name'  id="name" class="validate" required>
+                <label for="name">Nome:</label>
+              </div>
+              <div class="input-field col s12 l6">
+                  <input type="text" formControlName='name'  id="name" class="validate" required>
+                  <label for="name">Email:</label>
+                </div>
+        </form>
+
+
+      </mat-dialog-content>
+
+      <mat-dialog-actions>
+          <button mat-button (click)='salvar()'>Salvar</button>
+
+      </mat-dialog-actions>
+</div>
+
+
+
+
+
